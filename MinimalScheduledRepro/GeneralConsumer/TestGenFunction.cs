@@ -21,8 +21,8 @@ namespace MinimalScheduledRepro
             Message message, ILogger log, CancellationToken cancellationToken)
         {
             log.LogInformation($"C# ServiceBus queue trigger function processed message");
-
-            _receiver.HandleConsumer<TestGenConsumer>("generic", message, cancellationToken);
+            
+            await _receiver.HandleConsumer<TestGenConsumer>("generic", message, cancellationToken);
         }
     }
 }

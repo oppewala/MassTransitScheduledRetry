@@ -22,7 +22,7 @@ namespace MinimalScheduledRepro
         {
             log.LogInformation($"C# ServiceBus queue trigger function processed message");
 
-            _receiver.HandleConsumer<TestSpecificConsumer>("specific", message, cancellationToken);
+            await _receiver.HandleConsumer<TestSpecificConsumer>("specific", message, cancellationToken);
         }
     }
 }
